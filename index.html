@@ -16,7 +16,26 @@
         <!-- Your website content goes here -->
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const logoText = document.querySelector('.logo-text');
+    const logoIcon = document.querySelector('.logo-icon');
+
+    const tl = gsap.timeline({ paused: true }); // Create GSAP timeline
+
+    // Show logo elements with a slight delay (adjust delay as needed)
+    tl.to([logoText, logoIcon], { duration: 0, opacity: 1 }, 0.2);
+
+    // Animate text opacity to 0 (disappear) and move right
+    tl.to(logoText, { duration: 1, opacity: 0, x: '100%' });
+
+    // Animate icon movement and transparency after text disappears
+    tl.to(logoIcon, { duration: 1, x: '50%', opacity: 0.5 }, ">1"); 
+
+    tl.play(); // Play the animation
+  });
+</script>
     <script src="script.js"></script>
 </body>
 </html>
