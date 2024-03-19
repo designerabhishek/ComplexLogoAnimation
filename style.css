@@ -1,0 +1,20 @@
+.logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.logo-icon {
+    width: 100px; /* Adjust size as needed */
+    height: 100px; /* Adjust size as needed */
+    background-image: url('logo-icon.png'); /* Add your logo icon image */
+}
+
+.logo-text {
+    font-size: 24px; /* Adjust size as needed */
+}
+
+.content {
+    height: 2000px; /* Example content height */
+}
