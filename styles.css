@@ -1,23 +1,61 @@
 body, html {
     margin: 0;
     padding: 0;
+    height: 100%;
 }
 
-.logo-container {
-  position: relative; /* Needed for absolute positioning of logo elements */
-  text-align: center; /* Center logo elements horizontally */
+.container {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
 }
 
-.logo-icon, .logo-text {
-  opacity: 0; /* Initially hide both elements */
-  display: inline-block; /* Allow text and icon to appear side-by-side */
-  transition: opacity 0.5s ease; /* Smooth opacity transition */
+.logo {
+    display: flex;
+    align-items: center;
+    animation: iconEnlarge 1s forwards;
 }
 
-.logo-text {
-    /* Add styles for the text */
+.icon {
+    width: 50px;
+    height: 50px;
+    background-color: #000;
+    mask-image: url('path/to/your/icon.svg');
+    animation: iconColorChange 1s forwards;
 }
 
-.website-content {
-    /* Styles for the website content */
+.text {
+    margin-left: 10px;
+    font-size: 24px;
+    animation: textDisappear 1s forwards;
+}
+
+@keyframes iconColorChange {
+    0% {
+        background-color: #000;
+    }
+    100% {
+        background-color: transparent;
+    }
+}
+
+@keyframes textDisappear {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+}
+
+@keyframes iconEnlarge {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(5);
+    }
 }
