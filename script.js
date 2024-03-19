@@ -1,21 +1,10 @@
-document.addEventListener('DOMContentLoaded', function() {
-    // Fade in the logo after a delay
-    gsap.to('.logo-container', { opacity: 1, duration: 0.5, delay: 1 });
-
-    // After a delay, hide the text and move the icon to the center
-    setTimeout(function() {
-        gsap.to('.logo-text', { opacity: 0, duration: 0.5 });
-        gsap.to('.logo-icon', { x: '-50%', opacity: 0.5, duration: 0.5 });
-    }, 2000);
-
-    // Scroll trigger: When the user starts scrolling, scale up the icon
-    gsap.to('.logo-icon', {
-        scale: 2,
-        scrollTrigger: {
-            trigger: '.logo-container',
-            start: 'top center',
-            end: 'bottom top',
-            scrub: true
-        }
-    });
+gsap.to('.logo-icon', {
+  scrollTrigger: {
+    trigger: window, // Entire window acts as the trigger
+    start: "top top", // Animation starts when the element hits the top of the viewport
+    end: "bottom bottom", // Animation ends when the element reaches the bottom of the viewport
+    scrub: true, // Animation progresses as you scroll (adjust scrub value for speed)
+    scale: 5, // Increase the image size as you scroll
+    ease: "none" // Use linear ease for consistent growth
+  }
 });
