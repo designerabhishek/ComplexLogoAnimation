@@ -4,16 +4,14 @@ body, html {
 }
 
 .logo-container {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out;
+  position: relative; /* Needed for absolute positioning of logo elements */
+  text-align: center; /* Center logo elements horizontally */
 }
 
-.logo-icon {
-    /* Add styles for the graphic icon */
+.logo-icon, .logo-text {
+  opacity: 0; /* Initially hide both elements */
+  display: inline-block; /* Allow text and icon to appear side-by-side */
+  transition: opacity 0.5s ease; /* Smooth opacity transition */
 }
 
 .logo-text {
