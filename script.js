@@ -20,7 +20,7 @@ gsap.set(icon, {
   backgroundColor: "#000",
   width: "50px",
   height: "50px",
-  maskImage: "url(path/to/your/icon.svg)",
+  maskImage: "url(https://www.svgrepo.com/show/532037/clouds.svg)",
 });
 gsap.set(logo.querySelector(".text"), {
   color: "#000",
