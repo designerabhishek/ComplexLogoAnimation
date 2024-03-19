@@ -1,14 +1,21 @@
-// GSAP animation sequence
-gsap.to(".logo-text", { duration: 1, opacity: 0, x: "100px", delay: 2 });
-gsap.to(".logo-icon", { duration: 1, opacity: 0.5, scale: 1.5, xPercent: -50, yPercent: -50, delay: 2 });
+document.addEventListener('DOMContentLoaded', function() {
+    // Fade in the logo after a delay
+    gsap.to('.logo-container', { opacity: 1, duration: 0.5, delay: 1 });
 
-// Scroll trigger animation
-gsap.to(".logo-icon", {
-    scrollTrigger: {
-        trigger: ".logo-icon",
-        start: "top top",
-        end: "bottom bottom",
-        scrub: 1,
-    },
-    scale: 3, // Adjust scale as needed
+    // After a delay, hide the text and move the icon to the center
+    setTimeout(function() {
+        gsap.to('.logo-text', { opacity: 0, duration: 0.5 });
+        gsap.to('.logo-icon', { x: '-50%', opacity: 0.5, duration: 0.5 });
+    }, 2000);
+
+    // Scroll trigger: When the user starts scrolling, scale up the icon
+    gsap.to('.logo-icon', {
+        scale: 2,
+        scrollTrigger: {
+            trigger: '.logo-container',
+            start: 'top center',
+            end: 'bottom top',
+            scrub: true
+        }
+    });
 });
