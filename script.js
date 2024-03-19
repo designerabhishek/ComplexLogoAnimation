@@ -1,10 +1,30 @@
-gsap.to('.logo-icon', {
-  scrollTrigger: {
-    trigger: window, // Entire window acts as the trigger
-    start: "top top", // Animation starts when the element hits the top of the viewport
-    end: "bottom bottom", // Animation ends when the element reaches the bottom of the viewport
-    scrub: true, // Animation progresses as you scroll (adjust scrub value for speed)
-    scale: 5, // Increase the image size as you scroll
-    ease: "none" // Use linear ease for consistent growth
-  }
+const logo = document.querySelector('.logo');
+const icon = document.querySelector('.icon');
+
+const observer = new IntersectionObserver((entries) => {
+    if (entries[0].isIntersecting) {
+        logo.classList.add('animate');
+    }
+});
+
+observer.observe(logo);
+
+window.addEventListener('scroll', () => {
+    const scrollTop = window.pageYOffset;
+    const windowHeight = window.innerHeight;
+    const logoHeight = logo0% {
+        background-color: transparent;
+    }
+}
+
+@keyframes textDisappear {
+    0% {
+        opacity.offsetHeight;
+
+    if (scrollTop > windowHeight - logoHeight) {
+        icon: 1;
+    }
+    100% {
+        opacity: 0.style.transform = `scale(${window.innerWidth / icon.offsetWidth})`;
+    }
 });
